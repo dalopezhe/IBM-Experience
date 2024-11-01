@@ -1,0 +1,731 @@
+/* Author: Jo Jung
+Date: Day Month Year
+Version: Week 04
+*/
+
+/*
+#051c4a dark blue
+#002d9c blue
+##78a9ff light blue
+#d0e2ff lighter blue
+#ffc0cb pink
+*/
+
+/* ============= FONT ============= */
+/* body font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wdth,wght@0,75,300;1,75,300&display=swap');
+
+
+/* ================ Global styles ================ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	font-size: 16px;
+	font-weight: 300;
+	font-family: 'Noto Sans JP', sans-serif;
+    /* To centre the entire web page */
+	display: flex;
+	justify-content: center;
+}
+
+/* ================= FORMAT ================ */
+h1 {
+	font-size: 2em;
+	
+}
+
+span {
+	color: #ffc0cb;
+}
+
+h2 {
+	color: #051c4a;
+    
+}
+
+h3{ 
+
+font-size: 1.5em;
+color: firebrick;
+
+}
+
+
+
+/* ================ LAYOUT ================ */
+#wrapper {
+	max-width: 1200px;
+	display: flex;
+    /* Row is same as text direction left to right. Column flows top to bottom. Yeah, it's a little confusing. Think of the placement of flex items and how they flow to make up the space either as a row or column. */
+    
+    /* I want my flex items to flow top to bottom stacked. So column is used instead of the default value of row. */
+	flex-flow: column wrap;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	flex-flow: column wrap;
+	height: 600px;
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)),url(imagesibm/cover.jpg) no-repeat top center / cover;
+}
+
+header h1 {
+	/*	text flow to be centred when the text is wrapped as well as the flex item to be positioned centre as defined in the header justify-content. */
+    padding-top: 300px;
+	text-align: center;
+    color: white;
+}
+
+header p {
+	font-size: 0.9em;
+	padding: 0 50px;
+	/*	text flow to be centred as well as the flex item to be positioned centre as defined in the header justify-content. */
+	text-align: center;
+    color: aliceblue;
+}
+
+article {
+	/* article is the parent container of the main content of the web page. The below styles are added to centre align the main content so that the content doesn't start from the left most edge of the viewport. */
+	width: 90%;
+	margin: 0 auto;
+	font-size: 0.9em;
+    
+    
+}
+
+
+
+article h1{
+    display: flex;
+	justify-content:flex-start;
+    color: #002d9c;
+    margin-left: 0px;
+    
+}
+
+/*==========Team=========*/
+
+#Team {
+    
+    padding: 50px;
+    border-radius: 0px 0px 16px 16px;
+}
+
+
+#Team-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 0px;
+}
+
+.team1 {
+    background-color: white; /* Box background color */
+    padding: 20px;
+    border-radius: 10px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 100%;
+    max-width: 300px; 
+    border: 3px solid #001141;
+}
+
+.team1 img {
+    border-radius: 5px; /* Optional rounded image */
+}
+
+.team1 h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #002d9c;
+}
+
+.team1 p {
+    
+    color: #001141;
+}
+
+/*===============NAV=============*/
+nav ul {
+	list-style: none;
+	background: #78a9ff;
+	padding: 0;
+	margin: 0;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+nav li {
+	text-align: center;
+    flex: 200px;
+}
+
+nav a {
+	text-decoration: none;
+	color: #000000;
+    /* So that the entire row of each link is selectable when hovered */
+	display: block;
+	padding: 15px;
+}
+
+nav a:hover {
+	background: #d0e2ff;
+}
+/*=============fOOTER===========*/
+footer {
+	display: flex;
+	/*	horizontal centre alignment as the main axis is row */
+	justify-content: center;
+	/*	vertical centre alignment as the main axis is row */
+	align-items: center;
+	
+	/*	General formatting for the footer area*/
+	height: 100px;
+	background: #78a9ff;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+@media screen and (min-width: 900px){
+    h1{ 
+        font-size: 3.5em;
+    }
+    header p {
+        font-size:1em;
+        padding: 0 200px;
+    }
+    article
+    {
+        font-size: 1em;
+    }
+    section{
+        display:flex;
+        flex-direction: row;
+    }
+    
+    section h2{
+        width:300px;
+        font-size: 1.1em;
+        text-align: left; 
+        padding-right: 20px;
+    }
+    .split {
+        flex: 0 1 600px;
+        padding-bottom: 50px;
+      
+    }
+    
+    .split img{
+        border-radius:  16px;
+    }
+    
+    header {order: 1;}
+    article {order: 3; }
+    nav {order: 2;}
+    footer {order: 4;}
+}
+
+
+/*========Future Lab======*/
+#wrapper2 {
+	max-width: 1200px;
+	display: flex;
+    /* Row is same as text direction left to right. Column flows top to bottom. Yeah, it's a little confusing. Think of the placement of flex items and how they flow to make up the space either as a row or column. */
+    
+    /* I want my flex items to flow top to bottom stacked. So column is used instead of the default value of row. */
+	flex-flow: column wrap;
+    background-color:aliceblue;
+}
+
+.header2 {
+	display: flex;
+	justify-content: center;
+	flex-flow: column wrap;
+	height: 600px;
+	background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.9)),url(imagesibm/1000009016.jpg) no-repeat top center / cover;
+}
+
+.newsletter{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+
+
+
+.newsletter img{
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+.newsletter p{
+    padding: 50px;
+    justify-content: center;
+}
+
+.image-swap {
+    position: relative;
+    width: 350px; /* width of the images */
+    height: 500px; /* height of the images */
+    
+    
+    
+}
+
+#rows{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.image-swap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Display the first image by default */
+.image-swap .img1 {
+    opacity: 1;
+}
+
+/* Hover effect to show the second image */
+.image-swap:hover .img1 {
+    opacity: 0;
+}
+
+.image-swap:hover .img2 {
+    opacity: 1;
+}
+
+/* Use a different pseudo-class for the third image */
+.image-swap:active .img2 {
+    opacity: 0;
+}
+
+.image-swap:active .img3 {
+    opacity: 1;
+}
+
+.newsletter{
+    display: flex;
+    flex-direction: row;  
+}
+
+.newsletter img{
+    margin-right: 50px;
+    margin-bottom: 50px;
+    border-radius: 16px;
+}
+
+.newsletter p{
+    padding: 50px;
+    text-align: left;
+    font-weight: 400;
+}
+
+.image-swap {
+    position: relative;
+    width: 350px; /* width of the images */
+    height: 500px; /* height of the images */
+      
+}
+
+.moodboard img{
+    border-radius: 30px;
+    margin-bottom: 50px;
+    
+    
+    
+}
+
+.moodboard2 img{
+    border-radius: 0px;
+    
+    
+    
+    
+    
+}
+
+
+
+
+/* Caption styling */
+.image-swap .caption {
+    position: relative;
+    margin-top: 510px; /* positions caption below the images */
+    color: #555;
+    font-size: 1em;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: 400;
+    
+}
+
+#rows{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    
+}
+
+.image-swap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Display the first image by default */
+.image-swap .img1 {
+    opacity: 1;
+}
+
+/* Hover effect to show the second image */
+.image-swap:hover .img1 {
+    opacity: 0;
+}
+
+.image-swap:hover .img2 {
+    opacity: 1;
+}
+
+/* Use a different pseudo-class for the third image */
+.image-swap:active .img2 {
+    opacity: 0;
+}
+
+.image-swap:active .img3 {
+    opacity: 1;
+}
+
+.quote1 {
+    padding: 50px;
+    background-color:#051c4a;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 100px;
+}
+
+/*============second part==========*/
+
+/* Styling for #rows2 section */
+#rows2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    margin-top: 20px; /* Add some spacing above the section */
+}
+
+/* Image swap container for rows2 */
+.image-swap2 {
+    position: relative;
+    width: 350px; /* Width of the images */
+    height: 250px; /* Height of the images */
+   
+}
+
+/* Image styles */
+.image-swap2 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+     border-radius: 16px;
+}
+
+/* Display the first image by default */
+.image-swap2 .img1 {
+    opacity: 1;
+}
+
+/* Hover effect to show the second image */
+.image-swap2:hover .img1 {
+    opacity: 0;
+}
+
+.image-swap2:hover .img2 {
+    opacity: 1;
+}
+
+.quote2 {
+    padding: 50px;
+    background-color:#051c4a;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.quote2 h2{
+    color: white;
+    display: flex;
+  
+    
+    
+    
+}
+
+/*
+h2{
+    padding-bottom: 30px;
+}
+*/
+
+.newsletter3{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.newsletter3 img{
+    margin-right: 50px;
+    margin-bottom: 50px;
+    border-radius: 16px;
+}
+
+.newsletter3 p{
+    padding: 50px;
+    text-align: left;
+    font-weight: 400;
+    
+    
+}
+.info2{
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    margin-bottom: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+
+
+footer{
+    margin-top: 50px;
+}
+
+/*========CLIENT WORK=========*/
+#wrapper3 {
+	max-width: 1200px;
+	display: flex;
+    
+	flex-flow: column wrap;
+}
+
+.header3 {
+	display: flex;
+	justify-content: center;
+	flex-flow: column wrap;
+	height: 600px;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),url(imagesibm/wood.jpeg) no-repeat top center / cover;
+}
+
+.process{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.process img{
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-top: 70px;
+    border-radius: 16px;
+    border: 3px solid #051c4a;
+}
+
+.process p{
+    padding: 50px;
+    text-align: left;
+    font-weight: 400;
+    
+    
+}
+
+
+#rows3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    margin-top: 20px; /* Add some spacing above the section */
+}
+
+/* Image swap container for rows2 */
+.image-swap3 {
+    position: relative;
+    width: 500px; /* Width of the images */
+    height: 250px; /* Height of the images */
+    border: 3px solid #051c4a;
+   border-radius: 16px;
+}
+
+/* Image styles */
+.image-swap3 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+     border-radius: 16px;
+}
+
+/* Display the first image by default */
+.image-swap3 .img1 {
+    opacity: 1;
+}
+
+/* Hover effect to show the second image */
+.image-swap3:hover .img1 {
+    opacity: 0;
+}
+
+.image-swap3:hover .img2 {
+    opacity: 1;
+}
+
+.image-swap3 .caption {
+    position: relative;
+    margin-top: 260px; /* positions caption below the images */
+    color: #555;
+    font-size: 1em;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-weight: 400;
+    
+}
+
+.Week4{
+    background-color: #d0e2ff;
+    padding: 50px;
+    border-radius:  16px;
+}
+
+
+
+.Week5-8{
+    background-color: #d0e2ff;
+    padding: 50px;
+    border-radius:  16px;
+}
+
+
+.Week1-4{
+    background-color: #d0e2ff;
+    padding: 50px;
+    border-radius:  16px 16px 0 0;
+}
+
+
+
+.Week1-4 img{
+    margin-right: 50px;
+    border-radius: 30px
+}
+
+.Week4-11{
+    background-color: #d0e2ff;
+    padding: 50px;
+    margin-bottom: 0px;
+    
+}
+
+.Week4-11 img{
+    border-radius: 30px;
+    margin-right: 50px;
+   
+    
+}
+
+.final{
+    background-color: #d0e2ff;
+    padding: 50px;
+    border-radius: 16px  ;
+}
+
+.finaldesigns{
+    background-color: #d0e2ff;
+    padding: 50px;
+    border-radius: 0 0 16px 16px  ;
+}
+
+/* Styling for the zoom section */
+.zoom-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 20px;
+    padding-bottom: 100px;
+    background-color: #f0f0f0;
+}
+
+.zoom-section img {
+    margin-bottom: 50px;
+}
+
+/* Image styling */
+.zoom-image {
+    width: 100%;
+    max-width: 800px; /* adjust this max-width to control the image size */
+    transition: transform 0.3s ease; /* smooth zoom effect */
+    border-radius: 16px;
+}
+
+/* Zoom effect on hover */
+.zoom-image:hover {
+    transform: scale(1.2); /* scales image to 110% */
+}
+
+.zoom-section h2{
+    margin-bottom: 80px;
+    padding: 5px;
+}
+
+.backtobase{
+    background-color: #f0f0f0;
+    padding: 50px;
+    
+}
